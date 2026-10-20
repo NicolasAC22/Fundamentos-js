@@ -1,0 +1,115 @@
+/* ======== ESTILOS GENERALES ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
+    color: #f8fafc;
+}
+
+/* ======== CONTENEDOR PRINCIPAL ======== */
+body > h1 {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 15px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+body > h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    margin: 18px auto 35px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #a78bfa, #38bdf8);
+}
+
+/* ======== LISTADO DE EJERCICIOS ======== */
+ul {
+    list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* ======== TARJETAS ======== */
+li {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-6px);
+    background: rgba(139, 92, 246, 0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    border-color: #a78bfa;
+}
+
+/* ======== ENLACES ======== */
+li a {
+    display: block;
+    padding: 24px 15px;
+    color: #e0e7ff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+li a::before {
+    content: "💻";
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+li a:hover {
+    color: #ffffff;
+}
+
+/* ======== ACCESIBILIDAD DEL TECLADO ======== */
+li a:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: -4px;
+    border-radius: 16px;
+}
+
+/* ======== PANTALLAS PEQUEÑAS ======== */
+@media (max-width: 480px) {
+    body {
+        padding: 35px 15px;
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    li a {
+        padding: 18px;
+    }
+
+    li a::before {
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 0 10px 0 0;
+        vertical-align: middle;
+    }
+}
+
